@@ -1,132 +1,63 @@
 \section{PROCEDIMIENTO} 
 
 \begin{itemize}
-\subsection{Parte 1: Iniciando Docker}
-	\item Abrir el menu inicio y buscar la aplicación Docker for Windows.
+\subsection{Parte 1: Conectar a SQL Server desde Power BI Desktop }
+	\item Para realizar los gráficos en PowerBi Desktop primero debemos conectarnos con nuestra base de datos, que ya tiene que tener la base de datos "AdventureWorks 2017".  \\Abrimos nuestro PowerBi desktop y procedemos a realizar la conexión a SQL server.
+	\begin{figure}[h]
+	\begin{center}
+	\fbox{\includegraphics[width=12cm]{./Imagenes/tarea1}}
+	\end{center}
+	\end{figure}
 
-	\item Ubicar la aplicación PowerShell, ejecutarla como Administrador. En la ventana de comandos de PowerShell escribir
-lo siguiente.
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=8cm]{./Imagenes/1}
-		\end{center}
-		\end{figure}
+\begin{figure}[h]
+	\begin{center}
+	\fbox{\includegraphics[width=13cm]{./Imagenes/tarea1_1}}
+	\end{center}
+	\end{figure}
+\clearpage
+	\begin{figure}[h]
+	\begin{center}
+	\fbox{\includegraphics[width=11cm]{./Imagenes/tarea1_2}}
+	\end{center}
+	\end{figure}
+
+	\item Una vez terminado de cargas los datos que necesitaremos, podremos visualizarlo en el panel lateral derecho de nombre "Campos".
+	
      
-\subsection{Parte 2: Creando un contenedor con Oracle Database para Linux}
-	\item En un navegador de internet acceder a la dirección https://hub.docker.com/. Iniciar sesión o crear una cuenta nueva
-	\item Buscar el repositorio para Oracle Database. Ingresar y proceder con el CheckOut, completar los datos y aceptar las condiciones obligatorias para obtener el acceso al contenido.
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=8cm]{./Imagenes/3}
-		\end{center}
-		\end{figure}
-	\item En la ventana de PowerShell, escribir el siguiente comando:
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=9cm]{./Imagenes/4}
-		\end{center}
-		\end{figure}
-	\item Ejecutar el siguiente comando en Powershell, lo cual descargará la imagen del contenedor de Oracle Database en un servidor Linux
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/5}
-		\end{center}
-		\end{figure}
-	\item Seguidamente ejecutar el comando, como respuesta se visualizará un ID que corresponde al contenedor.
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/6}
-		\end{center}
-		\end{figure}
-	\item Verificar que el contenedor se esté ejecutando correctamente mediante el comando:
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/7}
-		\end{center}
-		\end{figure}
-	\item Cuando el estado del contenedor sea “healthy”, en la consola de Powershell, ejecutar el siguiente comando:
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/8}
-		\end{center}
-		\end{figure}
-	\item En la línea de comentados de SQL*Plus, escribir lo siguiente
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=8cm]{./Imagenes/19}
-		\end{center}
-		\end{figure}
-	\item Escribir el comando quit para cerrar la sesión de SQL*Plus
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/10}
-		\end{center}
-		\end{figure}
-	\item En una pestaña nueva del navegador de internet acceder a la siguiente dirección:https://localhost:5500/em. Iniciar sesión con los siguientes datos:
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=4cm]{./Imagenes/t1}
-		\includegraphics[width=15cm]{./Imagenes/11}
-		\end{center}
-		\end{figure}
-	\item Luego se visualizará la siguiente ventana. Cerrar sesión y la pestaña del navegador de internet.
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/12}
-		\end{center}
-		\end{figure}
-	\item Iniciar el aplicativo Oracle SQL Developer, crear una nueva conexión con los siguientes parámetros:
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=5cm]{./Imagenes/t2}
-		\includegraphics[width=15cm]{./Imagenes/13}
-		\end{center}
-		\end{figure}
-	\item Iniciar una nueva consulta, escribir y ejecutar lo siguiente; deberá retornar varios registros que representan las tablas de las base de datos
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=15cm]{./Imagenes/14}
-		\end{center}
-		\end{figure}
-	\item Cerrar la aplicación Oracle SQL Developer
-	\item En PowerShell ejecutar el siguiente comando. Y verificar la eliminación del contenedor con ejecutando
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=12cm]{./Imagenes/15}
-		\end{center}
-		\end{figure}
+\subsection{Parte 2: : Adicionar Gráficos al Reporte}
+	\item En la parte 2 realizaremos los gráficos con la información de la base de datos que seleccionamos. Utilizaremos del panel de Visualizaciones los diferentes gráficos que nos ofrecen.
 
+\begin{itemize}
+	\item{\textbf{1. Cantidad de Ventas del personal: }} Gráfico de Columna Apilada que nos muestra el reporte de la cantidad de ventas de cada personal de ventas.
+	\item {\textbf{2. Número de Empleados por especialidad: }}En el gráfico de Pie, muestra los la cantidad de empleados que tiene la empresa según su especialidad.
+	\item {\textbf{3. Top 10 Productos vendidos: }}El gráfico de Donut, muestra el top 10 de los productos más vendidos. Podremos visualizarlo representados en los diferentes colores en el gráfico.
+	\item {\textbf{4. Ventas Anuales y Beneficios Anuales: }}En el segundo gráfico de Columna Apilada podremos visualizar la cantidad de ventas anuales y los beneficios que ha traido. 
+	\end{itemize}
 
-\subsection{Parte 3: Adicionando persistencia}
-	\item En PowerShell ejecutar el siguiente comando, lo cual dara como respuesta se visualizará un ID que corresponde al contenedor
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=12cm]{./Imagenes/16}
-		\end{center}
-		\end{figure}
-	\item Repetir el paso 13 y modificar la contraseña del usuario SYS
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=12cm]{./Imagenes/20}
-		\end{center}
-		\end{figure}
-       	\item Iniciar el aplicativo Oracle SQL Developer, conectarse como el usuario SYS y ejecutar el siguiente comando
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=12cm]{./Imagenes/22}
-		\end{center}
-		\end{figure}
-	\item Verificar el contenido de la carpeta ORCL
-	\item En PowerShell ejecutar el siguiente comando. Verificar la eliminación del contenedor con ejecutando
-		\begin{figure}[H]
-		\begin{center}
-		\includegraphics[width=12cm]{./Imagenes/24}
-		\end{center}
-		\end{figure}
-	\item Cerrar la aplicación Oracle SQL Developer.
+\begin{figure}[h]
+	\begin{center}
+	\fbox{\includegraphics[width=15cm]{./Imagenes/tarea2}}
+	\end{center}
+	\end{figure}
+		
+\clearpage
 
+\subsection{Parte 3: Publicar el reporte en el portal de Power BI}
+	\item Cuando los gráficos esten listos, seleccionamos la opción de "Publicar" que nos ofrece PowerBi y poder subirlo a nuestra "Área de Trabajo". Cuando damos a "Aceptar" el archivo se irá subiendo a nuestra cuenta.
 
+\begin{figure}[h]
+	\begin{center}
+	\fbox{\includegraphics[width=11cm]{./Imagenes/tarea3}}
+	\end{center}
+	\end{figure}
 
+\item Una vez se haya terminado de subir, abrimos nuestra cuenta desde la página web de Microsoft PowerBi y podremos visualizar nuestro trabajo ahí.
+
+\begin{figure}[h]
+	\begin{center}
+	\fbox{\includegraphics[width=14cm]{./Imagenes/tarea3_1}}
+	\end{center}
+	\end{figure}
 
 \end{itemize}
 		
